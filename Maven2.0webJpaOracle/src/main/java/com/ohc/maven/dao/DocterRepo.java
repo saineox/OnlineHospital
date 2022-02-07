@@ -16,8 +16,10 @@ public interface DocterRepo extends JpaRepository<Ids, Integer>
 	@Query("from Docter order by fname")
 	List<Ids> getAllDocterSorted();
 
-	@Query("from Docter order by fname")
+	@Query("from Docter where fname = ?1")
 	List<Ids> findByFname(String fname);
+	
+	
 
 	
 	

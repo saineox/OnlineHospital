@@ -16,7 +16,7 @@ public interface PatientRepo extends JpaRepository<Ids, Integer>
 	@Query("from Patient order by fname")
 	List<Ids> getAllPatientSorted();
 
-	@Query("from Patient order by fname")
+	@Query("from Patient where fname = ?1")
 	List<Ids> findByFname(String fname);
 	
 	
